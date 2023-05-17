@@ -7,3 +7,4 @@
 #                                                                           - caractères pour "vide"
 #                                                                           - caractères pour "obstacle"
 #                                                                           - caractères pour "plein"
+""" Here we go again with a dumb useless shit . . . """

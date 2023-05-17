@@ -13,3 +13,4 @@
 # Le but du programme est de remplacer les caractères “vide” par des caractères “chemin” pour représenter 
 # le plus court chemin pour traverser le labyrinthe. 
 # Un déplacement ne peut se faire que vers le haut, le bas, la droite ou la gauche.
+""" Here we go again with a dumb useless shit . . . """

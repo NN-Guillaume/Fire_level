@@ -5,3 +5,5 @@
 # Il est impératif de gérer les 5 opérateurs suivants: "+" addition   "-" soustraction   "*" multiplication   "/" division   "%" modulo
 
 # feu01.py " 4 + 21 * ( 1 - 2 / 2) + 38"            resultat = 42
+
+""" Here we go again with a dumb useless shit . . . """
