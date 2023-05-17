@@ -12,13 +12,14 @@
 import sys
 
 
+# All functions reunited in a single one - easier drawing
 def draw_geometric(val1, val2):
     draw_up_line(val1)
     draw_each_side_lines(val1, val2)
-    #draw_side_line(val1 ,val2)
     draw_down_line(val1)
 
 
+# identical to the upper line drawer
 def draw_down_line(val1):
     if val1 == 0:
         print(" can't draw anything")
@@ -35,6 +36,7 @@ def draw_down_line(val1):
         print(" unexpected event ")
 
 
+# draw as much "vertical" lines as needed
 def draw_each_side_lines(val1, val2):
     lineNumber = val2 - 2
     count = 0
@@ -49,6 +51,7 @@ def draw_each_side_lines(val1, val2):
             continue
 
 
+# draw the "vertical" line
 def draw_side_line(val1, val2):
     if val2 == 0:
         print(" can't draw anything")
@@ -65,6 +68,7 @@ def draw_side_line(val1, val2):
         print(" unexpected event ")
 
 
+# Draw the "horizontal" line
 def draw_up_line(val1):
     if val1 == 0:
         print(" can't draw anything")
