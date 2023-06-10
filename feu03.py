@@ -4,7 +4,7 @@
 
 """ Here we go again with a dumb useless shit . . . """
 
-#   $> cat sudoku.txt                   $> python feu03.py
+#   $> sudoku.txt                       $> python feu03.py
 
 #   1 9 5 7 8 4 2 . .                   1 9 5 7 8 4 2 6 3
 #   3 . 6 5 2 9 1 4 7                   3 8 6 5 2 9 1 4 7             
@@ -16,11 +16,7 @@
 #   5 . 8 9 7 6 3 2 1                   5 4 8 9 7 6 3 2 1
 #   7 6 1 2 3 5 8 . 4                   7 6 1 2 3 5 8 9 4
 
-# first, test on a simple grid
-#   1 2 3
-#   2 3 1
-#   3 1 2
-
+# check if a value is already present in the same row, same column and same 3x3 box. 
 def is_valid(board, row, col, num):
     # Check row
     for i in range(9):
@@ -40,41 +36,65 @@ def is_valid(board, row, col, num):
             if board[start_row + i][start_col + j] == num:
                 return False
 
+    # If the value is a potenial/good one, then it returns True
     return True
 
+# Use recursive funcion (the one above) to solve the sudoku.
 def solve_sudoku(board):
+    # Iterate through each cell in the board
     for row in range(9):
         for col in range(9):
+            # Check if the cell is empty
             if board[row][col] == '.':
+                # Try numbers from 1 to 9
                 for num in range(1, 10):
+                    # Check if the number is a valid choice for the cell
                     if is_valid(board, row, col, str(num)):
+                        # If valid, assign the number to the cell
                         board[row][col] = str(num)
 
+                        # Recursively solve the remaining part of the puzzle
                         if solve_sudoku(board):
                             return True
 
+                        # If the recursive call returns False, backtrack by undoing the assignment
                         board[row][col] = '.'
 
+                # If no valid number leads to a solution, return False
                 return False
 
+    # If all cells are filled, the puzzle is solved
     return True
 
+
+# read the txt file, create a 2D list where the puzzle is stored and return the sudoku list (see function below)
 def read_sudoku_from_file(file_name):
     with open(file_name, 'r') as file:
         lines = file.readlines()
 
+    # creates a 2D list named sudoku with 9 rows and 9 columns, initially filled with None values.
     sudoku = [[None] * 9 for _ in range(9)]
+    # iterates through each line (representing each row in the Sudoku puzzle)
     for i in range(9):
+        # For each line, it removes any leading or trailing whitespace using the strip method and splits the line into 
+        # individual numbers using the split method. 
+        # The result is stored in the line variable.
+        # For each line, it removes any leading or trailing whitespace using the strip method and splits the 
+        # line into individual numbers using the split method. The result is stored in the line variable.
+        # It iterates through the numbers in the line list and assigns them to the corresponding positions in the sudoku list.
         line = lines[i].strip().split()
         for j in range(9):
             sudoku[i][j] = line[j]
 
+    # Finally, it returns the sudoku list representing the Sudoku puzzle.
     return sudoku
 
+# return the sudoku list
 def print_sudoku(board):
     for row in board:
         print(' '.join(row))
 
+# Here we manage and use all the functions defined above
 def main():
     file_name = 'sudoku.txt'  # Change this to the name of your file if needed
 
