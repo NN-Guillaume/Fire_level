@@ -4,9 +4,9 @@
 
 import random
 
-complain1 = " ... les exos eau00 et eau01 me les ont brisées au dernier degrès !!! "
-complain2 = " ... j'envisage d'apprendre la magie noire et les rituels sacrificiels pour réussir la suite des épreuves !"
-complain3 = " ...c\'est pas le foutage de g**** qui manque! \n Fonction sort() interdite\n Tu attends l\'exo n°12 du niveau \"EAU\" pour que l\'on te dise \"crée un truc qui remplace sort()\" !!!\n Je vous hais !!! "
+complain1 = " ... les exos du feux me font parler latin à l'envers (un exorciste, vite !) !!! "
+complain2 = " ... je prévois tout de même de faire une expédition punitive pour aller taper Harry (snif). "
+complain3 = " ... j'ai du sacrifier 30 chattons pour réussir ces p#tains d'épreuves (tout est de ta faute Harry) ! "
 
 randomChoice = random.randint(1, 3)
 if randomChoice == 1:
@@ -21,6 +21,7 @@ elif randomChoice == 3:
 else:
     print(" si cette phrase s'affiche, alors j'ai foiré mon programme  :^) ")
 
-print(" Après avoir hurlé et maudit l'univers au moins 100 fois ...")
-print("... je suis plutôt heureux d'avoir terminer l'épreuve de l'eau...")
+print(" Après avoir planifié la destruction de la création toute entière ...")
+print("... je suis très heureux d'avoir enfin terminer l'épreuve du feu...")
+print("... et je compte bien fêter ça comme il se doit ! ! !   :-D ")
 print("... même si... %s " % (randomChoice))
